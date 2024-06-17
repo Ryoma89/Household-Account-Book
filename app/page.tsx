@@ -1,7 +1,9 @@
-import Image from "next/image";
+import HomeContent from "@/features/home/HomeContent";
 
 export default function Home() {
   return (
-<div>hello world</div>
+    <main>
+      <HomeContent />
+    </main>
   );
 }
