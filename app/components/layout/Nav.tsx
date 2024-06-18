@@ -1,0 +1,58 @@
+"use client";
+import Link from "next/link";
+import React from "react";
+import { usePathname } from "next/navigation"; // usePathnameをインポート
+import { Separator } from "@/components/ui/separator";
+
+const Nav = () => {
+  const pathname = usePathname(); // 現在のパスを取得
+
+  const getLinkClass = (path: string) => {
+    return pathname === path
+      ? "text-xl text-buttonPrimary hover:opacity-50"
+      : "text-xl hover:opacity-50";
+  };
+
+  return (
+    <>
+      <nav className="pb-5 hidden sm:block">
+        <ul className="flex justify-center items-center">
+          <li className="mr-10">
+            <Link href="/dashboard" className={getLinkClass("/dashboard")}>
+              Dashboard
+            </Link>
+          </li>
+          <li className="mr-10">
+            <Link href="/budget" className={getLinkClass("/budget")}>
+              Budget
+            </Link>
+          </li>
+          <li className="mr-10">
+            <Link href="/chart" className={getLinkClass("/chart")}>
+              Chart
+            </Link>
+          </li>
+          <li className="mr-10">
+            <Link
+              href="/multi-currency"
+              className={getLinkClass("/multi-currency")}
+            >
+              Multi Currency
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/settings/profile"
+              className={getLinkClass("/settings/profile")}
+            >
+              Profile
+            </Link>
+          </li>
+        </ul>
+      </nav>
+      <Separator />
+    </>
+  );
+};
+
+export default Nav;
