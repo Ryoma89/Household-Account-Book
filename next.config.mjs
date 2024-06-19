@@ -15,7 +15,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["fcnnpyjnziffzzhzhxte.supabase.co"],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'fcnnpyjnziffzzhzhxte.supabase.co',
+        port: '',
+        pathname: '/**',
+      },
+    ],
   },
 };
 
