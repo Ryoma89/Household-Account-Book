@@ -16,7 +16,7 @@ import type { User} from "@supabase/auth-helpers-nextjs"
 import { ProfileType } from "@/types/user";
 import ResponsiveNav from "./ResponsiveNav";
 import Image from "next/image";
-import useStore from "@/store";
+import useStore from "@/store/profileStore";
 
 const Header = ({ user, profile }: { user: User | null; profile: ProfileType | null }) => {
   const { setUser } = useStore();

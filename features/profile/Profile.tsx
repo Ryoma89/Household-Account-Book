@@ -10,7 +10,7 @@ import Image from "next/image";
 import Loading from "@/app/loading";
 import * as z from "zod";
 import type { Database } from "@/lib/database.types";
-import useStore from "@/store";
+import useStore from "@/store/profileStore";
 import { useToast } from "@/components/ui/use-toast"
 import { currencies } from "@/constants/currencies";
 
