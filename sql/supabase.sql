@@ -33,3 +33,17 @@ create policy "プロフィール画像は誰でも参照可能" on storage.obje
 create policy "プロフィール画像はログインユーザーが追加" on storage.objects for insert with check ( bucket_id = 'profile' AND auth.role() = 'authenticated' );
 create policy "自身のプロフィール画像を更新" on storage.objects for update with check ( bucket_id = 'profile' AND auth.uid() = owner );
 create policy "自身のプロフィール画像を削除" on storage.objects for delete using ( bucket_id = 'profile' AND auth.uid() = owner );
+
+-- transactionsテーブルの作成
+CREATE TABLE transactions (
+    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id UUID REFERENCES profiles(id) ON DELETE CASCADE,
+    date DATE NOT NULL,
+    category VARCHAR(50) NOT NULL,
+    amount NUMERIC NOT NULL,
+    converted_amount NUMERIC NOT NULL,
+    type VARCHAR(10) CHECK (type IN ('Income', 'Expense')) NOT NULL,
+    content VARCHAR(255),
+    currency VARCHAR(3) NOT NULL,
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);

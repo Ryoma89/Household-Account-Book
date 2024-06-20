@@ -1,6 +1,6 @@
 import { create } from 'zustand'
-import type { Database } from '@/lib/database.types'
 import { supabase } from '@/lib/supabase'
+import { Database } from '@/lib/database.types2'
 type ProfileType = Database['public']['Tables']['profiles']['Row']
 
 type StateType = {
@@ -9,7 +9,7 @@ type StateType = {
   fetchUserProfile: (userId: string) => Promise<void>;
 }
 
-const useStore = create<StateType>((set) => ({
+const useProfileStore = create<StateType>((set) => ({
   // 初期値
   user: { id: '', email: '', name: '', introduce: '', avatar_url: '', primary_currency: '' },
   // アップデート
@@ -25,4 +25,4 @@ const useStore = create<StateType>((set) => ({
   }
 }))
 
-export default useStore
+export default useProfileStore
