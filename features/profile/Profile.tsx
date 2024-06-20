@@ -1,5 +1,3 @@
-"use client";
-
 import { useCallback, useState, useEffect } from "react";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useRouter } from "next/navigation";
@@ -9,10 +7,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import Loading from "@/app/loading";
 import * as z from "zod";
-import type { Database } from "@/lib/database.types";
 import useStore from "@/store/profileStore";
 import { useToast } from "@/components/ui/use-toast"
 import { currencies } from "@/constants/currencies";
+import { Database } from "@/lib/database.types2";
 
 type Schema = z.infer<typeof schema>;
 
@@ -33,7 +31,7 @@ const Profile = () => {
   const [message, setMessage] = useState("");
   const [avatarUrl, setAvatarUrl] = useState("/default.png");
   const { user } = useStore();
-  const { toast } = useToast()
+  const { toast } = useToast();
 
   const {
     register,
@@ -87,12 +85,12 @@ const Profile = () => {
     setLoading(true);
     setMessage('');
 
-    try{
-      let avatar_url = user.avatar_url
-      if(avatar) {
-        const {data: storageData, error: storageError } = await supabase.storage.from('profile').upload(`${user.id}/${uuidv4()}`, avatar)
+    try {
+      let avatar_url = user.avatar_url;
+      if (avatar) {
+        const { data: storageData, error: storageError } = await supabase.storage.from('profile').upload(`${user.id}/${uuidv4()}`, avatar);
 
-        if(storageError) {
+        if (storageError) {
           toast({
             title: 'Error',
             description: 'An error occurred while uploading your avatar.',
@@ -101,23 +99,23 @@ const Profile = () => {
           return;
         }
 
-        if(avatar_url) {
+        if (avatar_url) {
           const fileName = avatar_url.split('/').slice(-1)[0];
-          await supabase.storage.from('profile').remove([`${user.id}/${fileName}`])
+          await supabase.storage.from('profile').remove([`${user.id}/${fileName}`]);
         }
 
-        const { data: urlData } = await supabase.storage.from('profile').getPublicUrl(storageData.path)
+        const { data: urlData } = await supabase.storage.from('profile').getPublicUrl(storageData.path);
 
-        avatar_url = urlData.publicUrl
+        avatar_url = urlData.publicUrl;
       }
 
       const { error: updateError } = await supabase.from('profiles').update({
         name: data.name, introduce: data.introduce,
         avatar_url, primary_currency: data.primary_currency,
       })
-      .eq('id', user.id)
+        .eq('id', user.id);
 
-      if(updateError) {
+      if (updateError) {
         toast({
           title: 'Error',
           description: 'An error occurred while updating your profile.',
@@ -131,7 +129,7 @@ const Profile = () => {
         description: 'Your profile has been updated.',
       });
       reset();
-    } catch(error) {
+    } catch (error) {
       toast({
         title: 'Error',
         description: 'An error occurred while updating your profile.',
@@ -177,7 +175,7 @@ const Profile = () => {
             {...register("name", { required: true })}
           />
           <div className="my-3 text-center text-sm text-red-500">
-            {errors.name?.message}
+            {errors.name?.message && errors.name.message.toString()}
           </div>
         </div>
 
@@ -208,7 +206,7 @@ const Profile = () => {
             ))}
           </select>
           <div className="my-3 text-center text-sm text-red-500">
-            {errors.primary_currency?.message}
+            {errors.primary_currency?.message && errors.primary_currency.message.toString()}
           </div>
         </div>
 

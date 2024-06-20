@@ -1,4 +1,5 @@
-import { Database } from "@/lib/database.types"
+import { Database } from "@/lib/database.types2"
+
 
 export interface User {
   id: string

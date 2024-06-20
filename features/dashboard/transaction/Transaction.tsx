@@ -24,13 +24,13 @@ const Transaction = () => {
   const [open, setOpen] = useState(false);
   return (
     <>
-      <div className="px-5 py-7 sm:hidden">
+      <div className="mt-5 sm:hidden">
         <Title title="Transaction" />
-        <div className="mt-10 w-[120px] mx-auto ">
+        <div className="mt-10 w-[180px] mx-auto ">
           <Dialog>
             <DialogTrigger asChild>
-              <Button className="bg-buttonPrimary w-[120px]">
-                Transaction
+              <Button className="bg-buttonPrimary w-[180px]">
+                New Transaction
               </Button>
             </DialogTrigger>
             <DialogContent className="w-11/12 rounded-lg">
@@ -44,18 +44,16 @@ const Transaction = () => {
         </div>
       </div>
 
-      <div className="hidden sm:block sm:p-10">
-        <Card>
-          <CardHeader>
-            <CardTitle>
-              {" "}
-              <Title title="Transaction" />
-            </CardTitle>
-          </CardHeader>
+      <div className="hidden sm:block ">
+      <Title title="Transaction" />
+      <div className="sm:mt-10">
+      <Card>
+          <div className="sm:mt-7"></div>
           <CardContent>
             <TransactionForm onClose={() => setOpen(false)} />
           </CardContent>
         </Card>
+      </div>
       </div>
     </>
   );

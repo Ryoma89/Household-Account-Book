@@ -19,12 +19,14 @@ const useTransactionStore = create<TransactionState>((set) => ({
       .from("transactions")
       .select("*")
       .eq("user_id", userId);
+
     if (error) {
       console.error("Error fetching transactions:", error);
     } else {
+      console.log("Fetched transactions:", data);
       set({ transactions: data as TransactionType[] });
     }
-  }
+  },
 }));
 
 export default useTransactionStore;
