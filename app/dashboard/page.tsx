@@ -3,6 +3,7 @@ import Nav from "../components/layout/Nav";
 import Transaction from "@/features/dashboard/transaction/Transaction";
 import BalanceSheet from "@/features/dashboard/BalanceSheet/BalanceSheet";
 import DashboardList from "@/features/dashboard/dashboardList/DashboardList";
+import DashboardTable from "@/features/dashboard/dashboardList/DashboardTable";
 
 const DashboardPage = () => {
   return (
@@ -17,7 +18,8 @@ const DashboardPage = () => {
             <BalanceSheet />
           </div>
         </div>
-        <DashboardList />
+        {/* <DashboardList /> */}
+        <DashboardTable />
       </div>
     </div>
   );

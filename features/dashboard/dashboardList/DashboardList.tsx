@@ -12,6 +12,8 @@ import useTransactionStore from "@/store/transactionStore";
 import { supabase } from "@/lib/supabase";
 import SelectedMonth from "@/app/components/elements/selectedMonth";
 import { toZonedTime } from 'date-fns-tz';
+import Loading from "@/app/components/elements/Loading";
+import useFetchTransactions from "@/hooks/useFetchTransactions";
 
 const DashboardList = () => {
   const { user } = useProfileStore();
@@ -19,6 +21,8 @@ const DashboardList = () => {
   const { selectedMonth } = useMonthStore();
   const [selectedTransactions, setSelectedTransactions] = useState<Set<string>>(new Set());
   const { toast } = useToast();
+
+  const loading = useFetchTransactions(user?.id);
 
   const fetchUserTransactions = useCallback(async () => {
     if (user && user.id) {
@@ -62,6 +66,16 @@ const DashboardList = () => {
   const filteredTransactions = transactions.filter(transaction =>
     transaction !== null && transaction !== undefined && transaction.date.startsWith(selectedMonth)
   );
+
+
+  if (loading) {
+    return (
+      <div className="px-5 py-7">
+        <Title title="Dashboard List" />
+        <Loading />
+      </div>
+    ) // ローディングコンポーネントを使用
+  }
 
   return (
     <section className="sm:p-10 p-7">
@@ -138,3 +152,4 @@ const DashboardList = () => {
 };
 
 export default DashboardList;
+

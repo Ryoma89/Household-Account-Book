@@ -53,14 +53,14 @@ const BudgetCards = () => {
   }, [budgetAmount, expense, setBudgetBalance])
 
   return (
-    <div className='mt-5'>
-      <div className='my-5'>
+    <div className='mt-5 md:grid md:grid-cols-3 md:gap-3'>
+      <div className='my-5 sm:w-2/3 sm:mx-auto md:w-full md:mx-0'>
         <TypeCard title="Budget" amount={budgetAmount} currencySymbol={getCurrencySymbol(user.primary_currency)} color="text-blue-500" />
       </div>
-      <div className='my-5'>
+      <div className='my-5 sm:w-2/3 sm:mx-auto md:w-full md:mx-0'>
         <TypeCard title="Expense" amount={expense} currencySymbol={getCurrencySymbol(user.primary_currency)} color="text-red-500" />
       </div>
-      <div className='my-5'>
+      <div className='my-5 sm:w-2/3 sm:mx-auto md:w-full md:mx-0'>
         <TypeCard title="Balance" amount={budgetBalance} currencySymbol={getCurrencySymbol(user.primary_currency)} color="text-green-500" />
       </div>
     </div>

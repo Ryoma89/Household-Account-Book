@@ -8,6 +8,7 @@ import useTransactionStore from '@/store/transactionStore';
 import { getCurrencySymbol } from '@/constants/currencies';
 import SelectedMonth from '@/app/components/elements/selectedMonth';
 import { Skeleton } from "@/components/ui/skeleton"
+import Loading from '@/app/components/elements/Loading';
 
 const BalanceSheet = () => {
   const { user } = useProfileStore();
@@ -59,18 +60,17 @@ const BalanceSheet = () => {
     return (
       <div className='px-5 py-7'>
         <Title title="Balance Sheet" />
-        <SelectedMonth />
         <div className='mt-10 space-y-4'>
-          <Skeleton className='w-full h-[30px] rounded-full' />
-          <Skeleton className='w-full h-[30px] rounded-full' />
-          <Skeleton className='w-full h-[30px] rounded-full' />
+          <Loading />
+          <Loading />
+          <Loading />
         </div>
       </div>
     );
   }
 
   return (
-    <div className='mt-10'>
+    <div className='mt-10 md:mt-0'>
       <Title title="Balance Sheet" />
       <SelectedMonth />
       <div className='mt-10 space-y-4'>

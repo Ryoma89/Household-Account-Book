@@ -19,9 +19,25 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import useProfileStore from "@/store/profileStore";
+import useFetchTransactions from "@/hooks/useFetchTransactions";
+import Loading from "@/app/components/elements/Loading";
 
 const Transaction = () => {
   const [open, setOpen] = useState(false);
+  const { user } = useProfileStore();
+
+  const loading = useFetchTransactions(user?.id);
+
+  if (loading) {
+    return (
+      <div className="px-5 py-7">
+        <Title title="Transaction" />
+        <Loading />
+      </div>
+    )
+  }
+
   return (
     <>
       <div className="mt-5 sm:hidden">
