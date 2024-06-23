@@ -14,10 +14,6 @@ import TransactionForm from "./TransactionForm";
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 import useProfileStore from "@/store/profileStore";
 import useFetchTransactions from "@/hooks/useFetchTransactions";
