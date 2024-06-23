@@ -1,3 +1,4 @@
+'use client';
 import useTransactionStore from "@/store/transactionStore";
 import { useEffect, useState } from "react";
 
