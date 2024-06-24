@@ -44,7 +44,7 @@ const DashboardTable = () => {
   const columns = defaultColumns(deleteTransaction);
 
   return (
-    <div className="container mx-auto py-10">
+    <div className=" py-10">
       <Title title="Dashboard List" />
       <SelectedMonth />
       <DataTable columns={columns} data={filteredTransactions} onRowDelete={deleteTransaction} onSelectionChange={setSelectedTransactions} selectedTransactions={selectedTransactions}/>

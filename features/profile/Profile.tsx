@@ -1,3 +1,4 @@
+'use client'
 import { useCallback, useState, useEffect } from "react";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useRouter } from "next/navigation";
@@ -144,7 +145,7 @@ const Profile = () => {
 
   return (
     <div>
-      <h3 className="text-center font-bold text-xl mb-10">Profile</h3>
+      <h3 className="text-center font-bold text-3xl mb-10">Profile</h3>
       <form onSubmit={handleSubmit(onSubmit)}>
         {/* avatar */}
         <div className="mb-5">
@@ -157,7 +158,7 @@ const Profile = () => {
                 fill
               />
             </div>
-            <input type="file" id="avatar" onChange={onUploadImage} />
+            <input type="file" id="avatar" onChange={onUploadImage} className="max-w-[240px] xs:max-w-full"/>
             {fileMessage && (
               <div className="text-center text-red-500 my-5">{fileMessage}</div>
             )}

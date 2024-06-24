@@ -2,7 +2,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Database } from "@/lib/database.types";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useRouter } from 'next/navigation'
 import React, { useState } from "react";
@@ -12,6 +11,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Loading from "@/app/loading";
 import Link from "next/link";
 import { useToast } from "@/components/ui/use-toast";
+import { Database } from "@/lib/database.types2";
 
 type Schema = z.infer<typeof schema>;
 

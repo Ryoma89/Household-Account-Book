@@ -63,7 +63,7 @@ const BarChart = () => {
   }
 
   return (
-    <div className="p-5 md:p-10">
+    <div className="mt-10">
       <Title title="Bar Chart" />
       <div className="mt-10">
             <Card>
@@ -72,7 +72,7 @@ const BarChart = () => {
               </CardHeader>
               <CardContent>
                 {data.labels.length > 0 ? (
-                  <div>
+                  <div className="md:min-h-[300px]">
                     <Bar data={data} options={options} />
                   </div>
                 ) : (

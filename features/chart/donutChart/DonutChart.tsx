@@ -59,7 +59,7 @@ const DonutChart = () => {
   }
 
   return (
-    <div className="p-5 md:p-10">
+    <div className="mt-10 md:mt-0">
       <Title title="Donut Chart" />
       <div className="mt-10 md:mt-[88px]">
             <Card>
@@ -68,7 +68,7 @@ const DonutChart = () => {
               </CardHeader>
               <CardContent>
                 {data.labels.length > 0 ? (
-                  <div>
+                  <div className="md:min-h-[250px] lg:min-h-[300px]">
                     <Doughnut data={data} options={options} />
                   </div>
                 ) : (

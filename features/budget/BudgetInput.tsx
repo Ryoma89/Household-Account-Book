@@ -128,7 +128,7 @@ const BudgetInput = () => {
           <DialogTrigger className="bg-buttonPrimary rounded-lg text-white p-2 w-[180px]">
             Add Budget
           </DialogTrigger>
-          <DialogContent className="w-10/12">
+          <DialogContent className="w-10/12 rounded-lg">
             <FormProvider {...methods}>
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 mt-5">
                 {/* months */}
