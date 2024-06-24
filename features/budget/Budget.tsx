@@ -22,12 +22,12 @@ const Budget = () => {
     )
   }
   return (
-    <div>
+    <section className='px-5 py-10 md:p-10'>
       <Title title="Budget" />
       <BudgetInput />
       <SelectedMonth />
       <BudgetCards />
-    </div>
+    </section>
   )
 }
 

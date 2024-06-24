@@ -95,7 +95,7 @@ const PieChart = () => {
   }
 
   return (
-    <div className="p-5 md:p-10">
+    <div className="">
       <Title title="Pie Chart" />
       <div className="mt-10">
         <Tabs
@@ -115,7 +115,7 @@ const PieChart = () => {
               </CardHeader>
               <CardContent>
                 {data.labels.length > 0 ? (
-                  <div>
+                  <div className="md:min-h-[250px] lg:min-h-[300px]">
                     <Pie data={data} options={options} />
                   </div>
                 ) : (

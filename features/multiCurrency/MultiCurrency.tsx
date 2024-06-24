@@ -11,12 +11,12 @@ const MultiCurrency = () => {
   const { user } = useProfileStore();
   const loading = useFetchTransactions(user.id);
   return (
-    <div>
+    <section className='px-5 py-10 md:p-10'>
       <Title title='Multi Currency' />
       <SelectedMonth />
       <MultiCurrencySelect />
       <MultiCurrencyTable />
-    </div>
+    </section>
   )
 }
 

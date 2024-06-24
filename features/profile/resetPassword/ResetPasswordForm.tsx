@@ -8,14 +8,14 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import Loading from '@/app/loading'
 import { useToast } from "@/components/ui/use-toast";
 import * as z from 'zod'
-import type { Database } from '@/lib/database.types'
+import { Database } from '@/lib/database.types2'
 type Schema = z.infer<typeof schema>
 
 const schema = z.object({
   email: z.string().email({ message: 'Invalid email format.' }),
 })
 
-const ResetPassword = () => {
+const ResetPasswordForm = () => {
   const router = useRouter()
   const supabase = createClientComponentClient<Database>()
   const { toast } = useToast();
@@ -66,7 +66,6 @@ const ResetPassword = () => {
 
   return (
     <div className="max-w-[400px] mx-auto">
-      <div className="text-center font-bold text-xl mb-10">Forgot Your Password</div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-5">
           <div className="text-sm mb-1 font-bold">Email Address</div>
@@ -97,4 +96,4 @@ const ResetPassword = () => {
   )
 }
 
-export default ResetPassword
+export default ResetPasswordForm

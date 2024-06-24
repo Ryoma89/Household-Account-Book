@@ -36,7 +36,7 @@ const Transaction = () => {
 
   return (
     <>
-      <div className="mt-5 sm:hidden">
+      <div className="md:hidden">
         <Title title="Transaction" />
         <div className="mt-10 w-[180px] mx-auto ">
           <Dialog>
@@ -56,7 +56,7 @@ const Transaction = () => {
         </div>
       </div>
 
-      <div className="hidden sm:block ">
+      <div className="hidden md:block ">
       <Title title="Transaction" />
       <div className="sm:mt-10">
       <Card>

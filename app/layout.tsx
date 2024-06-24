@@ -21,8 +21,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <SupabaseListener />
+        <div className="max-w-screen-xl mx-auto">
         {children}
         <Toaster />
+        </div>
         </body>
     </html>
   );

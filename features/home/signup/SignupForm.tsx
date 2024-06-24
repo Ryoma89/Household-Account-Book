@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { currencies } from "@/constants/currencies";
-import { Database } from "@/lib/database.types";
+import { Database } from "@/lib/database.types2";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -116,7 +116,7 @@ const SignupForm = () => {
             placeholder="John Doe"
             {...register("name", { required: true })}
           />
-          <div className="my-3 text-center text-sm text-red-500">
+          <div className="my-1 text-center text-sm text-red-500">
             {errors.name?.message}
           </div>
         </div>
@@ -129,7 +129,7 @@ const SignupForm = () => {
             placeholder="m@example.com"
             {...register("email", { required: true })}
           />
-          <div className="my-3 text-center text-sm text-red-500">
+          <div className="my-1 text-center text-sm text-red-500">
             {errors.email?.message}
           </div>
         </div>
@@ -145,7 +145,7 @@ const SignupForm = () => {
             placeholder="********"
             {...register("password", { required: true })}
           />
-          <div className="my-3 text-center text-sm text-red-500">
+          <div className="my-1 text-center text-sm text-red-500">
             {errors.password?.message}
           </div>
         </div>
@@ -162,7 +162,7 @@ const SignupForm = () => {
               </option>
             ))}
           </select>
-          <div className="my-3 text-center text-sm text-red-500">
+          <div className="my-1 text-center text-sm text-red-500">
             {errors.primary_currency?.message}
           </div>
         </div>

@@ -46,9 +46,9 @@ const MultiCurrencyCard = () => {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div className="grid grid-cols-2">
+          <div className="grid grid-cols-2 md:grid md:grid-cols-4 lg:grid lg:grid-cols-5">
             {currencies.map((currency) => (
-              <div key={currency} className="w-[56px] mx-auto">
+              <div key={currency} className="w-[57px] mx-auto flex items-center my-1">
                 <Checkbox 
                 id={currency} 
                 className="mr-2"

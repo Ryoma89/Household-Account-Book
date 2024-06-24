@@ -12,7 +12,7 @@ const ResponsiveNav = () => {
   const pathname = usePathname(); // 現在のパスを取得
 
   const getLinkClass = (path: string) => {
-    return pathname === path ? "text-xl text-blue-500 hover:opacity-50" : "text-xl hover:opacity-50";
+    return pathname === path ? "text-xl text-buttonPrimary hover:opacity-50" : "text-xl hover:opacity-50";
   };
 
   return (
