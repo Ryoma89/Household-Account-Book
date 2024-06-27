@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 import { Separator } from "@/components/ui/separator";
 import { SheetClose } from "@/components/ui/sheet"; // Import SheetClose
 import * as Accordion from '@radix-ui/react-accordion';
-import { subNavigation } from "@/app/settings/layout";
 import { ChevronDownIcon } from "lucide-react";
+import { subNavigation } from "@/constants/Nav";
 
 const ResponsiveNav = () => {
   const pathname = usePathname(); // 現在のパスを取得
