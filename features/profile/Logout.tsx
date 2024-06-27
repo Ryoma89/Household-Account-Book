@@ -5,7 +5,7 @@ import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 import { useRouter } from 'next/navigation'
 import Loading from '@/app/loading'
 import { useToast } from "@/components/ui/use-toast";
-import type { Database } from '@/lib/database.types'
+import { Database } from '@/lib/database.types2'
 
 // Logout
 const Logout = () => {

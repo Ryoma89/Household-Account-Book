@@ -8,7 +8,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import Loading from '@/app/loading'
 import { useToast } from "@/components/ui/use-toast";
 import * as z from 'zod'
-import type { Database } from '@/lib/database.types'
+import { Database } from '@/lib/database.types2'
 type Schema = z.infer<typeof schema>
 
 const schema = z
