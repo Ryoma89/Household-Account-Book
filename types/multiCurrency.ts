@@ -4,3 +4,10 @@ export type multiCurrency = {
   expense: number
   balance: number
 }
+
+export interface DataItem {
+  currency: string;
+  income: number;
+  expense: number;
+  balance: number;
+}
