@@ -1,5 +1,5 @@
+import { Database } from "@/lib/database.types2";
 import HomePage from "./home/page";
-import { Database } from "@/lib/database.types";
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
