@@ -2,8 +2,8 @@ import { cookies } from 'next/headers'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { redirect } from 'next/navigation'
 
-import type { Database } from '@/lib/database.types'
 import Profile from '@/features/profile/Profile'
+import { Database } from '@/lib/database.types2'
 
 const ProfilePage = async () => {
   const supabase = createServerComponentClient<Database>({

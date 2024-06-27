@@ -1,5 +1,4 @@
 import React from "react";
-import Title from "@/app/components/elements/Title";
 import { Skeleton } from "@/components/ui/skeleton";
 
 const Loading = () => {

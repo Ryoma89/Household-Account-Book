@@ -2,8 +2,8 @@ import { cookies } from 'next/headers'
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs'
 import { redirect } from 'next/navigation'
 
-import type { Database } from '@/lib/database.types'
 import Email from '@/features/profile/Email'
+import { Database } from '@/lib/database.types2'
 
 // メールアドレス変更ページ
 const EmailPage = async () => {
