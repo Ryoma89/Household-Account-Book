@@ -37,7 +37,7 @@ const Header = ({ user, profile }: { user: User | null; profile: ProfileType | n
     <header className="px-5 py-3 h-auto lg:px-10 lg:py-7">
       <div className="flex justify-between items-center max-w-screen-xl mx-auto">
         <h1>
-          <img src="/title.png" alt="タイトル" className="h-14" />
+          <Image src="/title.png" alt="タイトル" className="h-14" width={140} height={56}/>
         </h1>
 
         <div className="block sm:hidden">
