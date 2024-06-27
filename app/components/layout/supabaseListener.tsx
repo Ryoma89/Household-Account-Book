@@ -1,8 +1,9 @@
-import { Database } from "@/lib/database.types";
+
 import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import React from "react";
 import { cookies } from "next/headers";
 import Header from "./Header";
+import { Database } from "@/lib/database.types2";
 
 const SupabaseListener = async () => {
   const supabase = createServerComponentClient<Database>({

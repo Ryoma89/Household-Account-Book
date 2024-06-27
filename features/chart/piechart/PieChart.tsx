@@ -131,7 +131,7 @@ const PieChart = () => {
               </CardHeader>
               <CardContent>
                 {data.labels.length > 0 ? (
-                  <div>
+                  <div className="md:min-h-[250px] lg:min-h-[300px]">
                     <Pie data={data} options={options} />
                   </div>
                 ) : (

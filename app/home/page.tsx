@@ -1,4 +1,4 @@
-import HomeContent from '@/features/home/HomeContent'
+import HomeContent from '@/features/home/home/HomeContent'
 import React from 'react'
 
 const HomePage = () => {
