@@ -30,6 +30,7 @@ const config = {
         lightColor: "#FFEDD4",
         buttonPrimary: "#f4810b",
         hover: "#ffe4c9",
+        HomeBg: "#f6f6f6",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

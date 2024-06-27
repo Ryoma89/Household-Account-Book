@@ -8,6 +8,13 @@ const transformData = (transactions: TransactionType[], selectedMonth: string): 
 
   const expense = filteredTransactions.filter((transaction) => transaction.type === "Expense").reduce((acc, t) => acc + Number(t.converted_amount), 0);
 
+  if(income === 0 && expense === 0) {
+    return {
+      labels: [],
+      datasets: [],
+    }
+  }
+
   return {
     labels: ['Income', 'Expense'],
     datasets: [
