@@ -8,10 +8,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import Image from "next/image";
 import Loading from "@/app/loading";
 import * as z from "zod";
-import useStore from "@/store/profileStore";
 import { useToast } from "@/components/ui/use-toast"
 import { currencies } from "@/constants/currencies";
 import { Database } from "@/lib/database.types2";
+import useProfileStore from "@/store/profileStore";
 
 type Schema = z.infer<typeof schema>;
 
@@ -31,7 +31,7 @@ const Profile = () => {
   const [fileMessage, setFileMessage] = useState("");
   const [message, setMessage] = useState("");
   const [avatarUrl, setAvatarUrl] = useState("/default.png");
-  const { user } = useStore();
+  const { user } = useProfileStore();
   const { toast } = useToast();
 
   const {
